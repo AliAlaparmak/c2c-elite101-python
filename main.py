@@ -36,6 +36,20 @@ def contact_support(order_n):
 
     
 
+def chat():
+    print("\nMenu:")
+    print("1: Store hours")
+    print("2: Product availability")
+    print("0: Exit")
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        print("We are open 9 AM to 8 PM.")
+    elif choice == "2":
+        print("That item is in stock.")
+    elif choice == "0":
+        print("Goodbye!")
+
 def main():
     greet_user()
     order_n = input("Please enter your six character order number: ").strip().upper()
