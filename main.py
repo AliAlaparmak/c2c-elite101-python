@@ -1,4 +1,6 @@
 
+#Example of how Database would look like.
+# Would ideally have more entires and be updatable dynamically.
 database = [
     ["ORD001", "Ali Alaparmak", "Out for delivery", "Dallas, TX", "ETA: 20 minutes"]
 ]
