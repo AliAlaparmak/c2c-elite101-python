@@ -15,6 +15,10 @@ def greet_user():
     return fname
 
 def track_order(order_n):
+    if order_n == "NONE":
+        print("You have chosen not to track an order.")
+        while order_n not in [order[0] for order in database]:
+            order_n = input("Please enter your six character order number to track your order: ").strip().upper()
     for order in database:
         if order[0] == order_n:
             print(f"Order Status: {order[2]}")
@@ -30,9 +34,14 @@ def contact_support(order_n, review, general_review=""):
 def main():
     greet_user()
     order_n = ""
+    valid_orders = [order[0] for order in database]
 
-    while order_n != "NONE" or order_n not in [order[0] for order in database]:
-        order_n = input("Please enter your six character order number. If you don't have one enter None: ").strip().upper()
+    while True:
+        order_n = input("Enter your 6-character order number (or type NONE if you don’t have one): ").strip().upper()
+        if order_n == "NONE" or order_n in valid_orders:
+            break
+        print("That order number wasn’t found. Please try again.")
+    
     print("Thank you! How can we assist you today?")
 
 
